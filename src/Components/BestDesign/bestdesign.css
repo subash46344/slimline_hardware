@@ -1,0 +1,321 @@
+.best_design_main_block {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3;
+    padding-top: 4%;
+}
+
+.heading_content_best_design_main_block {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading_content_best_design_main_block h1 {
+    font-size: 34px;
+    line-height: 35px;
+    font-weight: bold;
+    color: #1b1313;
+    margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.heading_content_best_design_main_block p {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #676767;
+    display: block;
+    margin-bottom: 24px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.button_container_block {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+}
+
+.button_container_block button {
+    width: auto;
+    padding: 7px 12px;
+    margin: 10px 3px;
+    color: #676767;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-family: 'Cairo', sans-serif;
+    border: none;
+    outline: none;
+}
+
+.button_container_block .active {
+    background-color: #bc2e36;
+    color: #fff;
+    outline: none;
+}
+
+.button_container_block button:hover {
+    background-color: #bc2e36;
+    color: #fff;
+    outline: none;
+}
+
+/* card css  */
+
+.best_card_main_block {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 25px 0px;
+}
+
+.card_block_best {
+    width: 25%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card_block_best img {
+    width: 100%;
+    height: 100%;
+}
+
+.hover_main_block_best {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hover_sub_block_best {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform 1s ease, opacity 0.1s ease;
+    color: #fff;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.card_block_best:hover .hover_sub_block_best {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.card_block_best .hover_sub_block_best {
+    opacity: 0;
+}
+
+.icon_block_hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #bc2e36;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.icon_block_hover:hover {
+    background-color: #bc2e36;
+}
+
+.icon_block_hover img {
+    width: 60%;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.content_block h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.content_block p {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Add to your CSS file */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.pagination button {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.pagination button.active {
+    background: #bc2e36;
+    color: #fff;
+}
+
+@media (min-width: 0px) and (max-width: 400px) {
+    .card_block_best {
+        width: 90%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 700px) {
+    .card_block_best {
+        width: 50%;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1150px) {
+    .card_block_best {
+        width: 33.3%;
+    }
+}
+
+@media (min-width: 1150px) and (max-width: 1300px) {
+    .card_block_best {
+        width: 25%;
+    }
+}
+
+
+/* Thumbnail styles */
+.thumbnail {
+    cursor: pointer;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+/* Popup overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Popup content */
+.popup-content {
+    position: relative;
+    width: 75%;
+    height: 90%;
+    /* max-width: 90%;
+    max-height: 90%; */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Full-size image */
+.full-image {
+    /* max-width: 100%;
+    max-height: 100%; */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Close button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.close-button:hover {
+    color: #f00;
+}
+
+.navigation-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev-button,
+.next-button {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.prev-button {
+    position: absolute;
+    left: 10px;
+}
+
+.next-button {
+    position: absolute;
+    right: 10px;
+}
