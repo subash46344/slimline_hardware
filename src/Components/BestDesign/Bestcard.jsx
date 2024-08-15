@@ -1,21 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link as LinkIcon } from "@mui/icons-material";
 import data from "./data";
 import ImageFullPopup from "./ImageFullPopup";
-
-const ITEMS_PER_PAGE = 8;
 
 const Bestcard = ({ category }) => {
   const items = data[category] || [];
   const [currentPage, setCurrentPage] = useState(1);
   const [popupImage, setPopupImage] = useState(null);
+  const [itemsPerPage, setItemsPerPage] = useState(8); // Default to desktop view
+
+  // Function to update items per page based on window width
+  const updateItemsPerPage = () => {
+    const width = window.innerWidth;
+    if (width <= 600) {
+      setItemsPerPage(2); // Mobile view
+    } else if (width <= 900) {
+      setItemsPerPage(4); // Tablet view
+    } else {
+      setItemsPerPage(8); // Desktop view
+    }
+  };
+
+  useEffect(() => {
+    updateItemsPerPage(); // Set the initial value
+
+    // Add event listener for window resize
+    window.addEventListener("resize", updateItemsPerPage);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
 
   // Calculate the total number of pages
-  const totalPages = Math.ceil(items.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(items.length / itemsPerPage);
 
   // Get the items for the current page
   const currentItems = items.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
   );
 
   // Function to handle page change
@@ -42,10 +64,9 @@ const Bestcard = ({ category }) => {
             <div className="hover_main_block_best">
               <div className="hover_sub_block_best">
                 <div className="icon_block_hover">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    onClick={() => openPopup(index)}
+                    <LinkIcon 
+                    onClick={() => openPopup(index)} 
+                    style={{ cursor: "pointer", fontSize: "1rem" }} 
                   />
                 </div>
                 <div className="content_block">

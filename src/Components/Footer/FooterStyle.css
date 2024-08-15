@@ -255,3 +255,31 @@
         display: none;
     }
 }
+.arrow_button {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1000; 
+    cursor: pointer; 
+  }
+  
+  .arrow_inner_block {
+    background-color: #bc2e36; 
+    border-radius: 50%; 
+    padding: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .arrow_inner_block:hover {
+    background-color: #bc2e37; 
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 750px) {
+    .arrow_button {
+        position: fixed; 
+        bottom: 20px; 
+        right: 30px; 
+      }
+  }

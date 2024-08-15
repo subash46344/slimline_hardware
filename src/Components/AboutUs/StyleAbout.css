@@ -24,6 +24,7 @@
     font-weight: bold;
     color: #1b1313;
     margin: 15px 0px;
+    font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .subContainer p {
@@ -33,6 +34,7 @@
     color: #676767;
     display: block;
     margin-bottom: 24px;
+    font-family: 'Cairo', sans-serif;
 }
 
 .subContainer_borderLine {

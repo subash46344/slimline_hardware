@@ -59,6 +59,7 @@
     font-family: 'Cairo', sans-serif;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .button_container_block .active {
@@ -177,8 +178,11 @@
 
 /* Add to your CSS file */
 .pagination {
+    width: 90%;
+    height: auto;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 20px;
     margin-bottom: 40px;
 }
@@ -205,6 +209,9 @@
 @media (min-width: 0px) and (max-width: 400px) {
     .card_block_best {
         width: 90%;
+    }
+    .pagination {
+       width: 90%;
     }
 }
 
